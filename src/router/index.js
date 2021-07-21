@@ -4,6 +4,9 @@ import VueRouter from 'vue-router'
 import Login from '../components/Login.vue'
 // 导入 ../components/Home.vue 文件
 import Home from '../components/Home.vue'
+// 导入 ../components/Welcome.vue
+import Welcome from '../components/Welcome.vue'
+import Users from '../components/user/Users.vue'
 
 Vue.use(VueRouter)
 
@@ -13,8 +16,18 @@ const routes = [
     { path: '/', redirect: '/login' },
     // 5.新增Login路由规则
     { path: '/login', component: Login },
-    // 新增Home路由规则
-    { path: '/home', component: Home }
+    // 新增Home路由规则 
+    {
+        path: '/home',
+        component: Home,
+        // 重定向到Welcome
+        redirect: '/welcome',
+        // 新增Home子路由Welcome
+        children: [
+            { path: '/welcome', component: Welcome },
+            { path: '/users', component: Users }
+        ]
+    }
 ]
 
 const router = new VueRouter({
