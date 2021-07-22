@@ -26,3 +26,35 @@ body,
 .el-pagination {
     margin-top: 15px;
 }
+
+.el-cascader-menu {
+    height: 262px;
+}
+
+
+/* 分类文本点击框 */
+
+.el-cascader-panel .el-radio {
+    width: 97%;
+    height: 100%;
+    z-index: 10;
+    position: absolute;
+    top: 0px;
+    right: 6px;
+}
+
+
+/* 隐藏单选框按钮 */
+
+.el-cascader-panel .el-radio__input {
+    visibility: hidden;
+}
+
+
+/* 右侧 >  */
+
+
+/* .el-cascader-panel .el-cascader-node__postfix {
+    top: 10px;
+    top: 50px;
+} */
